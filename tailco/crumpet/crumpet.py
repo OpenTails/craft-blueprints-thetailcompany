@@ -74,6 +74,9 @@ class Package(CMakePackageBase):
         # installer packages and the like, not for automated testing purposes). You can
         # do this by setting the following option.
         CMakePackageBase.buildTests = False
+        # Build things static - this is basically already done in cmake, but if we don't
+        # also set it explicitly here, things we don't want get added to the cmake call
+        self.subinfo.options.dynamic.buildStatic = True
         # Make sure we also pull submodules
         self.subinfo.options.fetch.checkoutSubmodules = True
         # Add in a bunch of compiler options we need for this whole thing to build properly
