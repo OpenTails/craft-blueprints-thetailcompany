@@ -1,4 +1,4 @@
-port info
+import info
 
 class subinfo(info.infoclass):
     # This defines the basic information about your software package (both the basic
