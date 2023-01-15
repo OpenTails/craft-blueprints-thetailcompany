@@ -48,7 +48,7 @@ class subinfo(info.infoclass):
         if CraftCore.compiler.isAndroid:
             self.runtimeDependencies["libs/qt5/qtandroidextras"] = "default"
             self.buildDependencies["libs/libintl-lite"] = None # for ki18n
-        else
+        else:
             self.runtimeDependencies["libs/gettext"] = None # for ki18n
         if CraftCore.compiler.isMinGW:
             self.runtimeDependencies["libs/runtime"] = None #mingw-based builds need this
