@@ -67,6 +67,12 @@ class Package(CMakePackageBase):
         # installer packages and the like, not for automated testing purposes). You can
         # do this by setting the following option.
         CMakePackageBase.buildTests = False
+        # Make sure we also pull submodules
+        self.subinfo.options.fetch.checkoutSubmodules = True
+        # Add in a bunch of compiler options we need for this whole thing to build properly
+        if CraftCore.compiler.isAndroid:
+            self.subinfo.options.configure.args += " -DANDROID_LINK_EXTRA_LIBRARIES=ON"
+
 
     def createPackage(self):
         # Usually you will not need this entry, but in case your main executable is
