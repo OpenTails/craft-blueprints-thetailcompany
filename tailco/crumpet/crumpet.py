@@ -42,6 +42,7 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["libs/qt5/qtremoteobjects"] = "default"
         self.runtimeDependencies["libs/qt5/qtsensors"] = "default"
         self.runtimeDependencies["libs/qt5/qtsvg"] = "default"
+        self.runtimeDependencies["libs/qt5/qttranslations"] = "default"
         self.runtimeDependencies["data/iso-codes"] = None # for ki18n
         # If there are compiler specific things to consider, either a library you need
         # for a specific compiler and not for others, you can use CraftCore.compiler to
