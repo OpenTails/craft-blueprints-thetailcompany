@@ -32,6 +32,18 @@ class subinfo(info.infoclass):
         # A buildDependencies entry is something required for actually building the
         # software in this blueprint
         self.buildDependencies["dev-utils/pkg-config"] = "default"
+        # If there are compiler specific things to consider, either a library you need
+        # for a specific compiler and not for others, you can use CraftCore.compiler to
+        # make such checks.
+        # NOTE: We're putting this here, as qtconnectivity needs qtandroidextras to build
+        # correctly when building for android (or we end up without QtBluetooth)
+        if CraftCore.compiler.isAndroid:
+            self.runtimeDependencies["libs/qt5/qtandroidextras"] = "default"
+            self.buildDependencies["libs/libintl-lite"] = None # for ki18n
+        else:
+            self.runtimeDependencies["libs/gettext"] = None # for ki18n
+        if CraftCore.compiler.isMinGW:
+            self.runtimeDependencies["libs/runtime"] = None #mingw-based builds need this
         # a runtimeDependencies entry is something which must also be installed for the
         # software to function (and which will also then be included in any package you
         # build using Craft)
@@ -44,16 +56,6 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["libs/qt5/qtsvg"] = "default"
         self.runtimeDependencies["libs/qt5/qttranslations"] = "default"
         self.runtimeDependencies["data/iso-codes"] = None # for ki18n
-        # If there are compiler specific things to consider, either a library you need
-        # for a specific compiler and not for others, you can use CraftCore.compiler to
-        # make such checks.
-        if CraftCore.compiler.isAndroid:
-            self.runtimeDependencies["libs/qt5/qtandroidextras"] = "default"
-            self.buildDependencies["libs/libintl-lite"] = None # for ki18n
-        else:
-            self.runtimeDependencies["libs/gettext"] = None # for ki18n
-        if CraftCore.compiler.isMinGW:
-            self.runtimeDependencies["libs/runtime"] = None #mingw-based builds need this
 
 from Package.CMakePackageBase import * # The package base
 
