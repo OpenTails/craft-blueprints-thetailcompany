@@ -31,7 +31,10 @@ class subinfo(info.infoclass):
         # the blueprint for the thing this blueprint depends on.
         # A buildDependencies entry is something required for actually building the
         # software in this blueprint
+        # extra-cmake-modules is needed to pull in a bunch of stuff for building android packages
+        self.buildDependencies["kde/frameworks/extra-cmake-modules"] = None
         self.buildDependencies["dev-utils/pkg-config"] = "default"
+        self.buildDependencies["virtual/base"] = None
         # If there are compiler specific things to consider, either a library you need
         # for a specific compiler and not for others, you can use CraftCore.compiler to
         # make such checks.
