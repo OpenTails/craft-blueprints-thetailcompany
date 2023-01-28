@@ -58,7 +58,9 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["libs/qt5/qtsensors"] = "default"
         self.runtimeDependencies["libs/qt5/qtsvg"] = "default"
         self.runtimeDependencies["libs/qt5/qttranslations"] = "default"
-        self.runtimeDependencies["data/iso-codes"] = None # for ki18n
+        self.runtimeDependencies["kde/frameworks/tier1/ki18n"] = None
+        self.runtimeDependencies["kde/frameworks/tier1/kirigami"] = None
+
 
 from Package.CMakePackageBase import * # The package base
 
