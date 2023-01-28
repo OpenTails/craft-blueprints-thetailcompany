@@ -47,6 +47,7 @@ class subinfo(info.infoclass):
             self.runtimeDependencies["libs/gettext"] = None # for ki18n
         if CraftCore.compiler.isMinGW:
             self.runtimeDependencies["libs/runtime"] = None #mingw-based builds need this
+        self.runtimeDependencies["libs/openssl"] = None
         # a runtimeDependencies entry is something which must also be installed for the
         # software to function (and which will also then be included in any package you
         # build using Craft)
