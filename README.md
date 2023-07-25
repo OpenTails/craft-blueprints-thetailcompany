@@ -16,7 +16,7 @@ capable build docker on your local system, and then add this repository to
 Craft by running:
 
 ```
-craft --add-blueprint-repository https://github.com/MasterTailer/craft-blueprints-thetailcompany.git\|\|main
+craft --add-blueprint-repository https://github.com/OpenTails/craft-blueprints-thetailcompany.git\|\|main
 ```
 
 Then you can use the craft command line interface to perform the actual

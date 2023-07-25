@@ -15,7 +15,10 @@ class subinfo(info.infoclass):
         # and then give the git URL for the project. If you need to specify a branch,
         # you can do so by adding a pipe and the name of the branch (or indeed tag)
         # to the line
-        self.svnTargets["master"] = "https://github.com/MasterTailer/CRUMPET-Android.git"
+        self.svnTargets["master"] = "https://github.com/OpenTails/CRUMPET-Android.git"
+        # You can also point at a local clone the repository, if you are doing some test work
+        # and building packages regularly.
+        # self.svnTargets["master"] = "/mnt/project|kde/qt5.15"
         # You can have multiple targets, each with a unique name.
         # To select a specific commit (or tag) add TWO pipes and the commit hash or tag name
         # to the line
@@ -51,7 +54,7 @@ class subinfo(info.infoclass):
         # a runtimeDependencies entry is something which must also be installed for the
         # software to function (and which will also then be included in any package you
         # build using Craft)
-        self.runtimeDependencies["libs/qt5/qtconnectivity"] = "default" # For QtBluetooth
+        self.runtimeDependencies["libs/qt5/qtconnectivity"] = "leinir/kde/5.15" # For QtBluetooth
         self.runtimeDependencies["libs/qt5/qtgraphicaleffects"] = "default"
         self.runtimeDependencies["libs/qt5/qtmultimedia"] = "default"
         self.runtimeDependencies["libs/qt5/qtquickcontrols2"] = "default"
