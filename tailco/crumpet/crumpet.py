@@ -51,6 +51,7 @@ class subinfo(info.infoclass):
         # a runtimeDependencies entry is something which must also be installed for the
         # software to function (and which will also then be included in any package you
         # build using Craft)
+        self.runtimeDependencies["libs/qt/qtbase"] = None
         self.runtimeDependencies["libs/qt6/qtconnectivity"] = "default" # For QtBluetooth
         self.runtimeDependencies["libs/qt6/qtmultimedia"] = "default"
         self.runtimeDependencies["libs/qt6/qtremoteobjects"] = "default"
