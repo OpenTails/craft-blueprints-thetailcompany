@@ -52,7 +52,6 @@ class subinfo(info.infoclass):
         # software to function (and which will also then be included in any package you
         # build using Craft)
         self.runtimeDependencies["libs/qt6/qtconnectivity"] = "default" # For QtBluetooth
-        self.runtimeDependencies["libs/qt6/qtgraphicaleffects"] = "default"
         self.runtimeDependencies["libs/qt6/qtmultimedia"] = "default"
         self.runtimeDependencies["libs/qt6/qtquickcontrols"] = "default" # For the file picker dialog
         self.runtimeDependencies["libs/qt6/qtquickcontrols2"] = "default"
