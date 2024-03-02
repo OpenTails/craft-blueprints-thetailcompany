@@ -53,7 +53,6 @@ class subinfo(info.infoclass):
         # build using Craft)
         self.runtimeDependencies["libs/qt6/qtconnectivity"] = "default" # For QtBluetooth
         self.runtimeDependencies["libs/qt6/qtmultimedia"] = "default"
-        self.runtimeDependencies["libs/qt6/qtquickcontrols"] = "default" # For the file picker dialog
         self.runtimeDependencies["libs/qt6/qtquickcontrols2"] = "default"
         self.runtimeDependencies["libs/qt6/qtremoteobjects"] = "default"
         self.runtimeDependencies["libs/qt6/qtsensors"] = "default"
